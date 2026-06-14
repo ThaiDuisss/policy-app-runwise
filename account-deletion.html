@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Trang yêu cầu xóa tài khoản của ứng dụng chạy bộ.">
+  <title>Yêu cầu xóa tài khoản</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">Running App Legal</a>
+    <nav class="nav-links" aria-label="Điều hướng chính">
+      <a href="privacy-policy.html">Quyền riêng tư</a>
+      <a href="terms-of-service.html">Điều khoản</a>
+      <a href="account-deletion.html">Xóa tài khoản</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container document">
+
+<h1>Yêu cầu xóa tài khoản</h1>
+<p class="meta">Dành cho người dùng Running App</p>
+
+<p>
+Người dùng có thể xóa tài khoản và dữ liệu liên quan trực tiếp trong ứng dụng hoặc gửi yêu cầu
+từ trang này mà không cần cài đặt lại ứng dụng.
+</p>
+
+<h2>Cách 1: Xóa trong ứng dụng</h2>
+<ol>
+  <li>Đăng nhập vào ứng dụng.</li>
+  <li>Mở <strong>Hồ sơ → Cài đặt tài khoản → Xóa tài khoản</strong>.</li>
+  <li>Đọc cảnh báo và xác minh danh tính nếu được yêu cầu.</li>
+  <li>Xác nhận xóa tài khoản.</li>
+</ol>
+
+<h2>Cách 2: Gửi yêu cầu qua email</h2>
+<p>
+Điền biểu mẫu dưới đây. Khi nhấn gửi, thiết bị sẽ mở ứng dụng email với nội dung yêu cầu đã được
+chuẩn bị sẵn và gửi đến <a href="mailto:thai110504@gmail.com">thai110504@gmail.com</a>.
+</p>
+
+<form class="form" id="deleteForm">
+  <label>
+    Email đã đăng ký
+    <input id="accountEmail" type="email" required placeholder="email@example.com">
+  </label>
+
+  <label>
+    Họ và tên
+    <input id="fullName" type="text" required placeholder="Nguyễn Văn A">
+  </label>
+
+  <label>
+    Phương thức đăng nhập
+    <select id="loginMethod">
+      <option>Email và mật khẩu</option>
+      <option>Google</option>
+      <option>Facebook</option>
+      <option>Apple</option>
+      <option>Khác</option>
+    </select>
+  </label>
+
+  <label>
+    Lý do xóa tài khoản (không bắt buộc)
+    <textarea id="reason" placeholder="Bạn có thể để trống mục này"></textarea>
+  </label>
+
+  <label>
+    <input id="confirmDelete" type="checkbox" required style="width:auto; margin-right:8px;">
+    Tôi yêu cầu xóa tài khoản và hiểu rằng dữ liệu đã xóa có thể không khôi phục được.
+  </label>
+
+  <div class="actions">
+    <button class="btn" type="submit">Tạo email yêu cầu xóa</button>
+    <a class="btn btn-secondary" href="mailto:thai110504@gmail.com">Gửi email thủ công</a>
+  </div>
+</form>
+
+<h2>Dữ liệu sẽ bị xóa hoặc ẩn danh</h2>
+<ul>
+  <li>Tài khoản, thông tin hồ sơ và ảnh đại diện.</li>
+  <li>Lịch sử chạy, lộ trình GPS, thống kê và kỷ lục cá nhân.</li>
+  <li>Kế hoạch tập luyện, trạng thái bài tập và dữ liệu AI Coach gắn với tài khoản.</li>
+  <li>Danh sách bạn bè, lời mời kết bạn, lượt thích và bình luận.</li>
+  <li>Notification token và dữ liệu phiên đăng nhập.</li>
+</ul>
+
+<h2>Dữ liệu có thể được giữ lại</h2>
+<p>
+Một số dữ liệu giới hạn có thể được giữ lại khi pháp luật yêu cầu, để phòng chống gian lận,
+bảo vệ hệ thống hoặc giải quyết tranh chấp. Dữ liệu trong bản sao lưu có thể tồn tại tạm thời
+trước khi được ghi đè theo chu kỳ sao lưu.
+</p>
+
+<h2>Thời gian xử lý</h2>
+<p>
+Yêu cầu hợp lệ sẽ được xác minh và xử lý trong vòng tối đa 30 ngày. Chúng tôi có thể yêu cầu
+người dùng xác minh quyền sở hữu tài khoản qua địa chỉ email đã đăng ký.
+</p>
+
+<div class="notice warning">
+  Không gửi mật khẩu, mã OTP, access token hoặc thông tin thanh toán trong email yêu cầu xóa tài khoản.
+</div>
+
+<script>
+document.getElementById('deleteForm').addEventListener('submit', function (event) {{
+  event.preventDefault();
+
+  const email = document.getElementById('accountEmail').value.trim();
+  const name = document.getElementById('fullName').value.trim();
+  const method = document.getElementById('loginMethod').value;
+  const reason = document.getElementById('reason').value.trim() || 'Không cung cấp';
+  const confirmed = document.getElementById('confirmDelete').checked;
+
+  if (!email || !name || !confirmed) {{
+    alert('Vui lòng điền đầy đủ thông tin bắt buộc và xác nhận yêu cầu.');
+    return;
+  }}
+
+  const subject = 'Yêu cầu xóa tài khoản Running App';
+  const body = [
+    'Tôi yêu cầu xóa tài khoản Running App và dữ liệu liên quan.',
+    '',
+    'Họ và tên: ' + name,
+    'Email tài khoản: ' + email,
+    'Phương thức đăng nhập: ' + method,
+    'Lý do: ' + reason,
+    '',
+    'Tôi xác nhận rằng tôi hiểu dữ liệu đã xóa có thể không khôi phục được.'
+  ].join('\n');
+
+  window.location.href =
+    'mailto:thai110504@gmail.com?subject=' + encodeURIComponent(subject) +
+    '&body=' + encodeURIComponent(body);
+}});
+</script>
+
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 Đỗ Xuân Thái · Liên hệ:
+    <a href="mailto:thai110504@gmail.com">thai110504@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,87 +1,33 @@
-# THÔNG TIN GOOGLE PLAY
+# Running App Legal Pages
 
-## Tên ứng dụng
+Bộ trang tĩnh để triển khai bằng GitHub Pages.
 
-Runwise – Chạy bộ & AI
+## Các file
 
-## Mô tả ngắn
+- `index.html`: Trang chủ
+- `privacy-policy.html`: Chính sách quyền riêng tư
+- `terms-of-service.html`: Điều khoản sử dụng
+- `account-deletion.html`: Yêu cầu xóa tài khoản
+- `styles.css`: Giao diện chung
 
-Theo dõi chạy bộ, lập kế hoạch, AI Coach và kết nối bạn bè.
+## Việc cần sửa trước khi phát hành
 
-## Mô tả đầy đủ
+1. Thay toàn bộ `Running App` bằng tên ứng dụng chính thức.
+2. Kiểm tra email hỗ trợ `thai110504@gmail.com`.
+3. Xóa hoặc chỉnh các phần liên quan đến SDK/tính năng mà ứng dụng không thực sự sử dụng.
+4. Nếu có backend xử lý yêu cầu xóa tài khoản, thay form `mailto:` bằng API hoặc form thật.
+5. Đảm bảo nội dung trang khớp với biểu mẫu Data safety trên Google Play Console.
 
-Runwise là ứng dụng hỗ trợ theo dõi hoạt động chạy bộ, xây dựng kế hoạch tập luyện và kết nối với cộng đồng những người yêu thích chạy bộ.
+## Đưa lên GitHub Pages
 
-Ứng dụng giúp bạn ghi lại từng buổi chạy, theo dõi sự tiến bộ và duy trì thói quen tập luyện phù hợp với mục tiêu cá nhân.
+1. Tạo repository public, ví dụ `running-app-legal`.
+2. Upload toàn bộ file trong thư mục này vào branch `main`.
+3. Vào `Settings` → `Pages`.
+4. Chọn `Deploy from a branch`.
+5. Chọn branch `main`, thư mục `/root`, rồi nhấn `Save`.
 
-### THEO DÕI BUỔI CHẠY
+Sau khi xuất bản, các URL sẽ có dạng:
 
-• Bắt đầu, tạm dừng, tiếp tục và kết thúc buổi chạy
-• Hiển thị bản đồ và lộ trình chạy
-• Theo dõi quãng đường, thời gian và tốc độ trung bình
-• Giữ màn hình sáng trong quá trình tập luyện
-• Lưu kết quả buổi chạy vào tài khoản
-
-### LỊCH SỬ HOẠT ĐỘNG
-
-• Xem danh sách các buổi chạy đã hoàn thành
-• Xem thông tin và bản đồ chi tiết của từng hoạt động
-• Chỉnh sửa hoặc xóa hoạt động
-• Like và bình luận về hoạt động
-• Chỉnh sửa hoặc xóa bình luận của bạn
-
-### THỐNG KÊ VÀ TIẾN ĐỘ
-
-Theo dõi các chỉ số quan trọng, bao gồm:
-
-• Tổng quãng đường
-• Tổng số buổi chạy
-• Tổng thời gian tập luyện
-• Tốc độ trung bình
-• Biểu đồ tiến độ theo thời gian
-• Buổi chạy dài nhất
-• Tốc độ cao nhất
-• Phiên tập dài nhất
-• Tổng số ngày hoạt động
-
-### KẾ HOẠCH TẬP LUYỆN
-
-• Xem kế hoạch tập luyện theo tháng
-• Tạo, chỉnh sửa và xóa bài tập
-• Đặt cự ly, thời lượng và thời gian bắt đầu
-• Nhận thông báo nhắc lịch trước buổi chạy
-• Theo dõi trạng thái bài tập: sắp tới, đã hoàn thành, chưa hoàn thành hoặc bỏ lỡ
-
-### KẾ HOẠCH ĐƯỢC HỖ TRỢ BỞI AI
-
-AI Coach hỗ trợ xây dựng kế hoạch dựa trên mục tiêu tập luyện của bạn.
-
-• Gợi ý pace theo mục tiêu
-• Sinh kế hoạch tập luyện cá nhân hóa
-• Điều chỉnh kế hoạch dựa trên tiến độ
-• Theo dõi khả năng phục hồi
-• Lưu kế hoạch tùy chỉnh
-
-Các gợi ý của AI Coach chỉ nhằm mục đích tham khảo và hỗ trợ tập luyện, không thay thế tư vấn y tế hoặc tư vấn từ huấn luyện viên chuyên môn.
-
-### CỘNG ĐỒNG VÀ BẠN BÈ
-
-• Xem hoạt động của bạn và bạn bè
-• Tìm kiếm người dùng
-• Gửi, chấp nhận, từ chối hoặc hủy lời mời kết bạn
-• Quản lý danh sách bạn bè
-• Xem hồ sơ và hoạt động được chia sẻ bởi người khác
-• Tương tác thông qua lượt thích và bình luận
-
-### TÀI KHOẢN VÀ HỒ SƠ
-
-• Đăng ký bằng email và mật khẩu
-• Đăng nhập bằng tài khoản mạng xã hội được hỗ trợ
-• Khôi phục mật khẩu qua email
-• Chỉnh sửa thông tin cá nhân
-• Thay đổi ảnh đại diện
-• Đổi mật khẩu
-• Quản lý cài đặt tài khoản
-• Đăng xuất hoặc xóa tài khoản
-
-Hãy bắt đầu hành trình chạy bộ, theo dõi từng bước tiến và chinh phục mục tiêu của bạn cùng Runwise.
+- `https://<username>.github.io/running-app-legal/privacy-policy.html`
+- `https://<username>.github.io/running-app-legal/terms-of-service.html`
+- `https://<username>.github.io/running-app-legal/account-deletion.html`
